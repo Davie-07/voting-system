@@ -5,19 +5,16 @@
 }
 
 .school-header {
-  /* display: flex; */
   text-align: center;
   margin-bottom: 1px;
   padding: 5px;
-  /* background: linear-gradient(135deg, #323234 0%, #2d2b2f 100%); */
   background: transparent;
-  /* border-radius: 15px; */
   color: #111;
   box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
 }
 
 .school-header h1 {
-  color: white;
+  color: orange;
   font-size: 2rem;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -32,7 +29,7 @@
 
 .school-intro {
   font-size: 1.2rem;
-  color: rgba(255,255,255,0.9);
+  color: rgba(0, 0, 0, 0.9);
   max-width: 700px;
   margin: 0 auto 20px;
   line-height: 1.6;
