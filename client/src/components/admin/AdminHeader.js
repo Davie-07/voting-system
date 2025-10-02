@@ -16,7 +16,7 @@ const AdminHeader = () => {
         <div className="header-content">
           <h1>
             <Link to="/admin">
-              <img src="/logo192.png" alt="Kandara College Logo" className="header-logo" />
+              <img src="../../ktvc-logo-r.png" alt="Kandara College Logo" className="header-logo" />
               Kandara College Admin
             </Link>
           </h1>
