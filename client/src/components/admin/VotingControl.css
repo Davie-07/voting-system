@@ -4,6 +4,8 @@
   padding: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   margin-bottom: 30px;
+  max-width: 800px;
+  margin: 0 auto 30px;
 }
 
 .voting-control h2 {
@@ -17,37 +19,37 @@
   margin: 30px 0;
 }
 
-.schedule-section {
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 30px 0;
-}
-
-.schedule-section h3 {
-  margin-top: 0;
-  color: #333;
-}
-
-.session-status {
-  background-color: #e9ecef;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.session-status h3 {
-  margin-top: 0;
-  color: #333;
-}
-
-.status-card {
-  background-color: white;
-  padding: 15px;
+.control-buttons .btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.status-card p {
-  margin: 10px 0;
+.control-buttons .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #c82333;
 }
 
 .voting-status-indicator {
@@ -79,6 +81,27 @@
   font-style: italic;
 }
 
+.session-status {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.session-status h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.status-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.status-card p {
+  margin: 10px 0;
+}
+
 .status-text {
   margin-left: 10px;
   font-weight: bold;
@@ -92,42 +115,29 @@
   color: #dc3545;
 }
 
-.form-group {
+.alert {
+  padding: 12px;
+  border-radius: 5px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
 }
 
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-.form-group button{
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
 
 @media (max-width: 768px) {
   .voting-control {
     padding: 20px;
-  }
-  
-  .schedule-section {
-    padding: 15px;
+    margin: 0 auto 20px;
   }
   
   .session-status {
@@ -137,5 +147,10 @@
   .status-badge {
     padding: 10px 20px;
     font-size: 1rem;
+  }
+  
+  .control-buttons .btn {
+    width: 100%;
+    padding: 12px;
   }
 }

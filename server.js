@@ -13,7 +13,9 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? false : 'http://localhost:3000',
+  origin: process.env.NODE_ENV === 'production' 
+    ? process.env.FRONTEND_URL || 'https://ktvc-voting-system-backend.onrender.com' 
+    : `http://localhost:${process.env.FRONTEND_PORT || 3000}`,
   credentials: true
 }));
 app.use(express.json({ extended: false }));
@@ -35,6 +37,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

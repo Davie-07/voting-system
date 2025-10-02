@@ -3,20 +3,9 @@ import api from '../../utils/api';
 import './VotingControl.css';
 
 const VotingControl = ({ session, updateSession }) => {
-  const [scheduleData, setScheduleData] = useState({
-    startDate: '',
-    endDate: ''
-  });
-  
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  
-  const { startDate, endDate } = scheduleData;
-  
-  const onChange = e => {
-    setScheduleData({ ...scheduleData, [e.target.name]: e.target.value });
-  };
   
   const openVoting = async () => {
     try {
@@ -42,23 +31,6 @@ const VotingControl = ({ session, updateSession }) => {
       setError('');
     } catch (err) {
       setError('Failed to close voting session');
-      setMessage('');
-    } finally {
-      setLoading(false);
-    }
-  };
-  
-  const scheduleVoting = async e => {
-    e.preventDefault();
-    
-    try {
-      setLoading(true);
-      const res = await api.post('/admin/voting/schedule', scheduleData);
-      updateSession(res.data);
-      setMessage('Voting session scheduled successfully!');
-      setError('');
-    } catch (err) {
-      setError('Failed to schedule voting session');
       setMessage('');
     } finally {
       setLoading(false);
@@ -95,45 +67,6 @@ const VotingControl = ({ session, updateSession }) => {
             Students can vote now. Close voting to finalize results.
           </p>
         )}
-      </div>
-      
-      <div className="schedule-section">
-        <h3>Schedule Voting Session</h3>
-        <form onSubmit={scheduleVoting}>
-          <div className="form-group">
-            <label htmlFor="startDate">Start Date & Time</label>
-            <input
-              type="datetime-local"
-              id="startDate"
-              name="startDate"
-              value={startDate}
-              onChange={onChange}
-              required
-            />
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="endDate">End Date & Time</label>
-            <input
-              type="datetime-local"
-              id="endDate"
-              name="endDate"
-              value={endDate}
-              onChange={onChange}
-              required
-            />
-          </div>
-          
-          <div className="form-group">
-            <button 
-              type="submit" 
-              className="btn btn-primary"
-              disabled={loading}
-            >
-              {loading ? 'Scheduling...' : 'Schedule Voting'}
-            </button>
-          </div>
-        </form>
       </div>
       
       <div className="session-status">

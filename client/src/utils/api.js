@@ -2,7 +2,9 @@ import axios from 'axios';
 
 // Create an axios instance
 const api = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api',
+  baseURL: process.env.NODE_ENV === 'production' 
+    ? '/api' 
+    : `http://localhost:${process.env.PORT || 10000}/api`,
 });
 
 // Add a request interceptor to include the token
