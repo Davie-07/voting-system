@@ -1,30 +1,131 @@
 .voting-positions {
-  padding: 20px 0;
+  padding: 15px 0; /* Reduced padding */
+  max-width: 1200px; /* Limit max width */
+  margin: 0 auto; /* Center the content */
 }
 
 .positions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Smaller cards */
+  gap: 15px; /* Reduced gap */
+  margin-top: 20px; /* Reduced margin */
+}
+
+.position-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 15px; /* Reduced padding */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.position-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.position-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px; /* Reduced margin */
+  color: #333;
+  font-size: 1.1rem; /* Smaller font */
+}
+
+.position-card .contestant-count {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px; /* Reduced padding */
+  border-radius: 20px;
+  font-size: 0.8rem; /* Smaller font */
+  display: inline-block;
 }
 
 .voting-closed-message {
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 15px; /* Reduced padding */
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 600px; /* Limit max width */
+  margin: 0 auto; /* Center the message */
 }
 
 .voting-closed-message h3 {
   color: #dc3545;
   margin-top: 0;
+  font-size: 1.3rem; /* Smaller font */
 }
 
 .countdown-info {
-  margin-top: 20px;
-  padding: 15px;
+  margin-top: 15px; /* Reduced margin */
+  padding: 10px; /* Reduced padding */
   background-color: #f8f9fa;
   border-radius: 5px;
+}
+
+.session-status {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px; /* Reduced padding */
+  margin-bottom: 20px; /* Reduced margin */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 600px; /* Limit max width */
+  margin: 0 auto 20px; /* Center the status */
+}
+
+.session-status h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.3rem; /* Smaller font */
+}
+
+.countdown {
+  font-size: 1.2rem; /* Smaller font */
+  font-weight: bold;
+  color: #007bff;
+  margin: 10px 0; /* Reduced margin */
+}
+
+.voting-open {
+  color: #28a745;
+  font-size: 1rem; /* Smaller font */
+}
+
+.voting-closed {
+  color: #dc3545;
+  font-size: 1rem; /* Smaller font */
+}
+
+.alert {
+  padding: 10px; /* Reduced padding */
+  margin: 15px 0; /* Reduced margin */
+  border-radius: 5px;
+  text-align: center;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 768px) {
+  .positions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .voting-positions {
+    padding: 10px 0; /* Even smaller padding on mobile */
+  }
+  
+  .position-card {
+    padding: 10px; /* Even smaller padding on mobile */
+  }
+  
+  .voting-closed-message {
+    padding: 20px 10px; /* Even smaller padding on mobile */
+  }
 }

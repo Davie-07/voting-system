@@ -2,7 +2,7 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -10,13 +10,20 @@
 }
 
 .position-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px); /* Reduced hover effect */
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .position-card h3 {
   margin-top: 0;
   color: #007bff;
+  font-size: 1.1rem; /* Smaller font */
+}
+
+.position-card p {
+  margin: 10px 0; /* Reduced margin */
+  color: #666;
+  font-size: 0.9rem; /* Smaller font */
 }
 
 .position-card.voted {
@@ -31,11 +38,31 @@
 
 .voted-badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px; /* Adjusted position */
+  right: 8px;
   background-color: #28a745;
   color: white;
-  padding: 5px 10px;
+  padding: 4px 8px; /* Reduced padding */
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.7rem; /* Smaller font */
+}
+
+.contestant-count {
+  background-color: #007bff;
+  color: white;
+  padding: 4px 8px; /* Reduced padding */
+  border-radius: 20px;
+  font-size: 0.8rem; /* Smaller font */
+  display: inline-block;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .position-card {
+    padding: 10px; /* Even smaller padding on mobile */
+  }
+  
+  .position-card h3 {
+    font-size: 1rem; /* Even smaller font on mobile */
+  }
 }

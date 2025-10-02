@@ -160,6 +160,10 @@ JWT_SECRET=your_jwt_secret_key
 - `POST /api/voting/vote` - Cast vote
 - `GET /api/voting/live-results` - Get live voting results
 
+## Troubleshooting
+
+See `TROUBLESHOOTING.md` for common issues and solutions.
+
 ## Contributing
 
 1. Fork the repository

@@ -17,10 +17,10 @@ const StudentDashboard = () => {
         // Load session data
         await loadSession();
         
-        // Set up polling to check for session changes every 5 seconds
+        // Set up polling to check for session changes every 2 seconds for better responsiveness
         const interval = setInterval(async () => {
           await loadSession();
-        }, 5000);
+        }, 2000);
         
         // Clean up interval on unmount
         return () => clearInterval(interval);

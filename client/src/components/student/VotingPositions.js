@@ -15,11 +15,11 @@ const VotingPositions = ({ session }) => {
     loadPositions();
     loadContestants();
     
-    // Set up polling to check for updates every 5 seconds
+    // Set up polling to check for updates every 2 seconds for better responsiveness
     const interval = setInterval(() => {
       loadPositions();
       loadContestants();
-    }, 5000);
+    }, 2000);
     
     // Clean up interval on unmount
     return () => clearInterval(interval);
@@ -29,10 +29,13 @@ const VotingPositions = ({ session }) => {
     try {
       const res = await api.get('/student/voting/positions');
       setPositions(res.data);
-      setError('');
+      // Only clear error if both requests succeed
+      if (Object.keys(contestants).length > 0) {
+        setError('');
+      }
     } catch (err) {
       console.error('Failed to load positions:', err);
-      setError('Failed to load voting positions. Please try again later.');
+      setError('Failed to load voting positions. Please make sure the backend is running and you are logged in.');
     }
   };
   
@@ -40,7 +43,10 @@ const VotingPositions = ({ session }) => {
     try {
       const res = await api.get('/student/contestants');
       setContestants(res.data);
-      setError('');
+      // Only clear error if both requests succeed
+      if (positions.length > 0) {
+        setError('');
+      }
     } catch (err) {
       console.error('Failed to load contestants:', err);
       setError('Failed to load contestants data. Please make sure the backend is running and you are logged in.');

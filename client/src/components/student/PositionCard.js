@@ -8,7 +8,9 @@ const PositionCard = ({ position, contestants, hasVoted, onClick }) => {
       onClick={hasVoted ? null : onClick}
     >
       <h3>{position}</h3>
-      <p>{contestants ? contestants.length : 0} candidates</p>
+      <div className="contestant-count">
+        {contestants ? contestants.length : 0} candidates
+      </div>
       {hasVoted && (
         <div className="voted-badge">
           <i className="fas fa-check-circle"></i> Voted

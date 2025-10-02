@@ -1,83 +1,201 @@
 .contestant-management {
   background-color: white;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px; /* Reduced padding */
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 1200px; /* Limit max width */
+  margin: 0 auto; /* Center the form */
 }
 
 .contestant-management h2 {
   margin-top: 0;
   color: #333;
   text-align: center;
+  font-size: 1.5rem; /* Smaller font */
 }
 
 .form-section {
   background-color: #f8f9fa;
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Reduced margin */
 }
 
 .form-section h3 {
   margin-top: 0;
   color: #333;
+  font-size: 1.2rem; /* Smaller font */
 }
 
 .contestants-list h3 {
   color: #333;
+  font-size: 1.2rem; /* Smaller font */
 }
 
 .contestants-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Smaller cards */
+  gap: 15px; /* Reduced gap */
 }
 
 .contestant-card {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   display: flex;
   flex-direction: column;
 }
 
 .contestant-photo {
-  width: 100px;
-  height: 100px;
+  width: 80px; /* Smaller photo */
+  height: 80px;
   object-fit: cover;
   border-radius: 50%;
-  margin: 0 auto 15px;
+  margin: 0 auto 10px; /* Reduced margin */
 }
 
 .contestant-info h4 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Reduced margin */
   color: #333;
+  font-size: 1rem; /* Smaller font */
 }
 
 .contestant-info p {
-  margin: 5px 0;
+  margin: 4px 0; /* Reduced margin */
   color: #666;
+  font-size: 0.9rem; /* Smaller font */
 }
 
 .contestant-actions {
-  margin-top: 15px;
+  margin-top: 10px; /* Reduced margin */
   display: flex;
-  gap: 10px;
+  gap: 8px; /* Reduced gap */
+  justify-content: center; /* Center the buttons */
 }
 
 .btn-secondary {
   background-color: #6c757d;
   color: white;
+  padding: 6px 10px; /* Reduced padding */
+  font-size: 0.85rem; /* Smaller font */
 }
 
 .btn-secondary:hover {
   background-color: #5a6268;
 }
 
+.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  padding: 6px 10px; /* Reduced padding */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.85rem; /* Smaller font */
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px; /* Reduced padding */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.85rem; /* Smaller font */
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.form-group {
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px; /* Reduced padding */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px; /* Smaller font */
+  box-sizing: border-box;
+}
+
+.form-group button {
+  margin: 10px auto 0; /* Center the button */
+  padding: 8px 15px; /* Reduced padding */
+  border-radius: 5px;
+  font-size: 0.9rem; /* Smaller font */
+  display: block; /* Ensure button is block level for centering */
+}
+
+.form-group button.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+.form-group button.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px; /* Space between buttons */
+}
+
+.form-group button.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
 @media (max-width: 768px) {
   .contestants-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .contestant-management {
+    padding: 15px; /* Even smaller padding on mobile */
+  }
+  
+  .form-section {
+    padding: 10px; /* Even smaller padding on mobile */
+  }
+  
+  .contestant-card {
+    padding: 10px; /* Even smaller padding on mobile */
+  }
+  
+  .contestant-actions {
+    flex-direction: column; /* Stack buttons on mobile */
+    gap: 5px;
+  }
+  
+  .contestant-actions .btn {
+    width: 100%; /* Full width buttons on mobile */
   }
 }
