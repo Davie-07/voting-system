@@ -37,7 +37,8 @@ const StudentDashboard = () => {
       const res = await api.get('/student/voting/session');
       setSession(res.data);
     } catch (err) {
-      console.error('Failed to load session', err);
+      console.error('Failed to load session:', err);
+      // Don't navigate to login on session load failure, just continue
     } finally {
       setLoading(false);
     }

@@ -29,8 +29,10 @@ const VotingPositions = ({ session }) => {
     try {
       const res = await api.get('/student/voting/positions');
       setPositions(res.data);
+      setError('');
     } catch (err) {
-      setError('Failed to load positions');
+      console.error('Failed to load positions:', err);
+      setError('Failed to load voting positions. Please try again later.');
     }
   };
   
@@ -38,8 +40,10 @@ const VotingPositions = ({ session }) => {
     try {
       const res = await api.get('/student/contestants');
       setContestants(res.data);
+      setError('');
     } catch (err) {
-      setError('Failed to load contestants');
+      console.error('Failed to load contestants:', err);
+      setError('Failed to load contestants data. Please make sure the backend is running and you are logged in.');
     } finally {
       setLoading(false);
     }
