@@ -45,11 +45,11 @@ const VotingResults = () => {
   
   return (
     <div className="voting-results">
-      <h2>Voting Results</h2>
+      <h2>Final Voting Results</h2>
       
       <div className="results-summary">
         <div className="summary-card">
-          <h3>Total Votes</h3>
+          <h3>Total Votes Cast</h3>
           <p className="vote-count">{totalVotes || 0}</p>
         </div>
       </div>
@@ -60,18 +60,26 @@ const VotingResults = () => {
           Object.keys(byPosition).map(position => (
             <div key={position} className="position-results">
               <h4>{position}</h4>
-              <div className="contestants-list">
-                {byPosition[position].map((item, index) => (
-                  <div key={item.contestant._id} className="contestant-result">
-                    <div className="contestant-info">
-                      <span className="rank">#{index + 1}</span>
-                      <span className="name">{item.contestant.name}</span>
-                      <span className="votes">{item.votes} votes</span>
-                      {index === 0 && <span className="leader-badge">Leader</span>}
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <table className="results-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Contestant Name</th>
+                    <th>Votes</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {byPosition[position].map((item, index) => (
+                    <tr key={item.contestant._id}>
+                      <td>#{index + 1}</td>
+                      <td>{item.contestant.name}</td>
+                      <td>{item.votes}</td>
+                      <td>{index === 0 ? 'Winner' : ''}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           ))
         ) : (
@@ -81,23 +89,34 @@ const VotingResults = () => {
       
       <div className="overall-results">
         <h3>Overall Results</h3>
-        {overall && overall.length > 0 ? (
-          <div className="contestants-list">
-            {overall.map((contestant, index) => (
-              <div key={contestant._id} className="contestant-result">
-                <div className="contestant-info">
-                  <span className="rank">#{index + 1}</span>
-                  <span className="name">{contestant.name}</span>
-                  <span className="position">{contestant.position}</span>
-                  <span className="votes">{contestant.votes} votes</span>
-                  {index === 0 && <span className="leader-badge">Top</span>}
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p>No votes recorded yet.</p>
-        )}
+        <table className="results-table overall-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Contestant Name</th>
+              <th>Position</th>
+              <th>Votes</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {overall && overall.length > 0 ? (
+              overall.map((contestant, index) => (
+                <tr key={contestant._id}>
+                  <td>#{index + 1}</td>
+                  <td>{contestant.name}</td>
+                  <td>{contestant.position}</td>
+                  <td>{contestant.votes}</td>
+                  <td>{index === 0 ? 'Top Contestant' : ''}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5">No votes recorded yet.</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );

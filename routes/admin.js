@@ -153,6 +153,11 @@ router.post('/voting/close', auth, async (req, res) => {
     session.endDate = Date.now();
     
     await session.save();
+    
+    // Get all votes for logging purposes
+    const votes = await Vote.find();
+    console.log(`Voting closed. Total votes cast: ${votes.length}`);
+    
     res.json(session);
   } catch (err) {
     console.error(err.message);

@@ -57,6 +57,7 @@ const AdminLogin = () => {
               onChange={onChange}
               placeholder="Enter your system ID"
               required
+              autoComplete="username"
             />
           </div>
           
@@ -70,6 +71,7 @@ const AdminLogin = () => {
               onChange={onChange}
               placeholder="Enter your password"
               required
+              autoComplete="current-password"
             />
           </div>
           

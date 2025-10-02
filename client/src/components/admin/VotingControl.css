@@ -1,69 +1,99 @@
 .voting-control {
   background-color: white;
   border-radius: 10px;
-  padding: 20px; /* Reduced padding */
+  padding: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  margin-bottom: 20px; /* Reduced margin */
-  max-width: 800px; /* Limit max width */
-  margin: 0 auto 20px; /* Center the form */
+  margin-bottom: 30px;
 }
 
 .voting-control h2 {
   margin-top: 0;
   color: #333;
   text-align: center;
-  font-size: 1.5rem; /* Smaller font */
 }
 
 .control-buttons {
   text-align: center;
-  margin: 20px 0; /* Reduced margin */
-}
-
-.control-buttons .btn {
-  padding: 8px 15px; /* Reduced padding */
-  font-size: 0.9rem; /* Smaller font */
-  margin: 0 5px; /* Space between buttons */
+  margin: 30px 0;
 }
 
 .schedule-section {
   background-color: #f8f9fa;
-  padding: 15px; /* Reduced padding */
+  padding: 20px;
   border-radius: 10px;
-  margin: 20px 0; /* Reduced margin */
+  margin: 30px 0;
 }
 
 .schedule-section h3 {
   margin-top: 0;
   color: #333;
-  font-size: 1.2rem; /* Smaller font */
 }
 
 .session-status {
   background-color: #e9ecef;
-  padding: 15px; /* Reduced padding */
+  padding: 20px;
   border-radius: 10px;
 }
 
 .session-status h3 {
   margin-top: 0;
   color: #333;
-  font-size: 1.2rem; /* Smaller font */
 }
 
 .status-card {
   background-color: white;
-  padding: 10px; /* Reduced padding */
+  padding: 15px;
   border-radius: 5px;
 }
 
 .status-card p {
-  margin: 8px 0; /* Reduced margin */
-  font-size: 0.9rem; /* Smaller font */
+  margin: 10px 0;
+}
+
+.voting-status-indicator {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.status-open {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-closed {
+  background-color: #dc3545;
+  color: white;
+}
+
+.status-note {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.status-text {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.text-open {
+  color: #28a745;
+}
+
+.text-closed {
+  color: #dc3545;
 }
 
 .form-group {
-  margin-bottom: 15px; /* Reduced margin */
+  margin-bottom: 20px;
 }
 
 .form-group label {
@@ -74,49 +104,38 @@
 
 .form-group input {
   width: 100%;
-  padding: 8px; /* Reduced padding */
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 14px; /* Smaller font */
+  font-size: 16px;
   box-sizing: border-box;
 }
 
-.form-group button {
-  margin: 10px auto 0; /* Center the button */
-  padding: 8px 15px; /* Reduced padding */
+.form-group button{
+  width: 100%;
+  padding: 10px;
   border-radius: 5px;
-  font-size: 0.9rem; /* Smaller font */
-  display: block; /* Ensure button is block level for centering */
-}
-
-.form-group button.btn-primary {
-  background-color: #007bff;
-  color: white;
-  border: none;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.form-group button.btn-primary:hover {
-  background-color: #0069d9;
-}
-
 @media (max-width: 768px) {
   .voting-control {
-    padding: 15px; /* Even smaller padding on mobile */
+    padding: 20px;
   }
   
   .schedule-section {
-    padding: 10px; /* Even smaller padding on mobile */
+    padding: 15px;
   }
   
   .session-status {
-    padding: 10px; /* Even smaller padding on mobile */
+    padding: 15px;
   }
   
-  .control-buttons .btn {
-    display: block;
-    width: 100%;
-    margin: 5px 0; /* Stack buttons on mobile */
+  .status-badge {
+    padding: 10px 20px;
+    font-size: 1rem;
   }
 }

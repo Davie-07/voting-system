@@ -23,7 +23,7 @@ const VotingControl = ({ session, updateSession }) => {
       setLoading(true);
       const res = await api.post('/admin/voting/open');
       updateSession(res.data);
-      setMessage('Voting session opened successfully!');
+      setMessage('Voting session opened successfully! Students can now vote.');
       setError('');
     } catch (err) {
       setError('Failed to open voting session');
@@ -38,7 +38,7 @@ const VotingControl = ({ session, updateSession }) => {
       setLoading(true);
       const res = await api.post('/admin/voting/close');
       updateSession(res.data);
-      setMessage('Voting session closed successfully!');
+      setMessage('Voting session closed successfully! Final results are now available.');
       setError('');
     } catch (err) {
       setError('Failed to close voting session');
@@ -85,6 +85,18 @@ const VotingControl = ({ session, updateSession }) => {
         </button>
       </div>
       
+      <div className="voting-status-indicator">
+        <h3>Current Voting Status</h3>
+        <div className={`status-badge ${isOpen ? 'status-open' : 'status-closed'}`}>
+          {isOpen ? 'VOTING IS CURRENTLY OPEN' : 'VOTING IS CURRENTLY CLOSED'}
+        </div>
+        {isOpen && (
+          <p className="status-note">
+            Students can vote now. Close voting to finalize results.
+          </p>
+        )}
+      </div>
+      
       <div className="schedule-section">
         <h3>Schedule Voting Session</h3>
         <form onSubmit={scheduleVoting}>
@@ -125,9 +137,13 @@ const VotingControl = ({ session, updateSession }) => {
       </div>
       
       <div className="session-status">
-        <h3>Current Session Status</h3>
+        <h3>Session Details</h3>
         <div className="status-card">
-          <p><strong>Status:</strong> {isOpen ? 'Open' : 'Closed'}</p>
+          <p><strong>Status:</strong> 
+            <span className={`status-text ${isOpen ? 'text-open' : 'text-closed'}`}>
+              {isOpen ? 'Open' : 'Closed'}
+            </span>
+          </p>
           {hasSchedule && (
             <>
               <p><strong>Start Date:</strong> {new Date(session.startDate).toLocaleString()}</p>

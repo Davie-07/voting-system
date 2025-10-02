@@ -12,7 +12,10 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' ? false : 'http://localhost:3000',
+  credentials: true
+}));
 app.use(express.json({ extended: false }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
