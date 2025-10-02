@@ -1,0 +1,41 @@
+.position-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.position-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.position-card h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.position-card.voted {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.position-card.voted:hover {
+  transform: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.voted-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}

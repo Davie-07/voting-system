@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ktvc-voting-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: ktvc-voting-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./client/build
+    envVars:
+      - key: CI
+        value: false

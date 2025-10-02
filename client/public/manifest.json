@@ -1,0 +1,25 @@
+{
+  "short_name": "KTVC",
+  "name": "KTVC voting system",
+  "icons": [
+    {
+      "src": "ktvc-logo-r.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "ktvc-logo-r.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "ktvc-logo-r.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,65 @@
+.student-header {
+  background-color: #28a745;
+  color: white;
+  padding: 5px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content h1 a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.header-content nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.header-content nav ul li {
+  margin-left: 15px;
+}
+
+.header-content nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.header-content nav ul li a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+  }
+  
+  .header-content nav ul {
+    margin-top: 10px;
+  }
+  
+  .header-content nav ul li {
+    margin: 0 5px;
+  }
+}

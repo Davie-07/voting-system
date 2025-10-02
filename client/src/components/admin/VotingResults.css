@@ -1,0 +1,109 @@
+.voting-results {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.voting-results h2 {
+  margin-top: 0;
+  color: #333;
+  text-align: center;
+}
+
+.results-summary {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.summary-card {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 200px;
+}
+
+.summary-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.vote-count {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.results-section h3,
+.overall-results h3 {
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.position-results {
+  margin-bottom: 30px;
+}
+
+.position-results h4 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.contestants-list {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.contestant-result {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.contestant-result:last-child {
+  border-bottom: none;
+}
+
+.contestant-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rank {
+  background-color: #6c757d;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.name {
+  flex: 1;
+  font-weight: bold;
+}
+
+.position {
+  color: #6c757d;
+}
+
+.votes {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.leader-badge {
+  background-color: #ffc107;
+  color: #212529;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}

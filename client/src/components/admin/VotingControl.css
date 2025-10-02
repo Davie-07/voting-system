@@ -1,0 +1,51 @@
+.voting-control {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.voting-control h2 {
+  margin-top: 0;
+  color: #333;
+  text-align: center;
+}
+
+.control-buttons {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.schedule-section {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.schedule-section h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.session-status {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.session-status h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.status-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.status-card p {
+  margin: 10px 0;
+}

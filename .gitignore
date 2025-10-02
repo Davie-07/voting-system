@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+/client/node_modules/
+
+# Environment variables
+.env
+
+# Build outputs
+/client/build/
+
+# Log files
+*.log
+
+# Database files
+*.db
+*.sqlite
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Uploads
+uploads/
